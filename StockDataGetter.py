@@ -9,10 +9,10 @@ Created on Sun Apr 10 01:52:09 2022
 import yfinance as yf
 import pandas as pd
 
-tickerStrings = ['WARFY', 'GOOGL']
+tickerStrings = ['GOOGL']
 df_list = list()
 for ticker in tickerStrings:
-    data = yf.download(ticker, group_by="Ticker", period='2d', interval='1m')
+    data = yf.download(ticker, group_by="Ticker", period='1d', interval='1m')
     data['ticker'] = ticker  # add this column because the dataframe doesn't contain a column with the ticker
     df_list.append(data)
 
